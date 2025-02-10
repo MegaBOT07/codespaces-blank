@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotation Input</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="script.js" defer></script>
+  <script>
+    // Function to set the current date
+    window.onload = function() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('date').value = today;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Quotation Details</h1>
+    <form id="quotationForm">
+      <label for="clientName">Client Name:</label>
+      <input type="text" id="clientName" required />
+
+      <label for="clientAddress">Client Address:</label>
+      <input type="text" id="clientAddress" required />
+
+      <div class="items">
+        <h2>Items</h2>
+        <table>
+          <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price per Item</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="item1" required /></td>
+            <td><input type="number" id="quantity1" required /></td>
+            <td><input type="number" id="price1" required /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="item2" required /></td>
+            <td><input type="number" id="quantity2" required /></td>
+            <td><input type="number" id="price2" required /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="item3" required /></td>
+            <td><input type="number" id="quantity3" required /></td>
+            <td><input type="number" id="price3" required /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="item4" required /></td>
+            <td><input type="number" id="quantity4" required /></td>
+            <td><input type="number" id="price4" required /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="item5" required /></td>
+            <td><input type="number" id="quantity5" required /></td>
+            <td><input type="number" id="price5" required /></td>
+          </tr>
+        </table>
+      </div>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required readonly />
+
+      <button type="button" onclick="generateQuotation()">Generate Quotation PDF</button>
+    </form>
+  </div>
+</body>
+</html>
